@@ -1,0 +1,29 @@
+{
+  "name": "mizuxe",
+  "version": "1.0.0",
+  "description": "Mizuxe app",
+  "main": "main.js",
+  "scripts": {
+    "sass-watch": "node-sass sass/main.scss css/style.css -w",
+    "bootstrap-watch": "node-sass sass/bootstrap.scss css/bootstrap.css -w",
+    "sass-compile": "node-sass sass/main.scss css/style.comp.css",
+    "css-prefix": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "css-compress": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "css-build": "npm-run-all sass-compile css-prefix css-compress",
+    "bootstrap-compile": "node-sass sass/bootstrap.scss css/bootstrap.css",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "FJ",
+  "license": "ISC",
+  "homepage": "https://fj-vega.github.io/tm-mizuxe",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "concat": "^1.0.3",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^4.1.1"
+  },
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
